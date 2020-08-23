@@ -1,0 +1,6 @@
+module Pods_LunchPicking {
+  umbrella header "Pods-LunchPicking-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+module Pods_LunchPicking_LunchPickingUITests {
+  umbrella header "Pods-LunchPicking-LunchPickingUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

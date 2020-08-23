@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3A859324ECE41F00860A08 /* VC_CategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A859224ECE41F00860A08 /* VC_CategoryScreen.swift */; };
+		1B3A859524ECE4B700860A08 /* TC_CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A859424ECE4B700860A08 /* TC_CategoryViewCell.swift */; };
+		729133BFBF7857EF9F152F60 /* libPods-LunchPicking-LunchPickingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0260641F92657E5AEE81F89 /* libPods-LunchPicking-LunchPickingUITests.a */; };
 		89A2800324EACF0B00236A06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2800224EACF0B00236A06 /* AppDelegate.swift */; };
 		89A2800D24EACF0B00236A06 /* LunchPicking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A2800B24EACF0B00236A06 /* LunchPicking.xcdatamodeld */; };
 		89A2800F24EACF1200236A06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A2800E24EACF1200236A06 /* Assets.xcassets */; };
@@ -14,6 +17,8 @@
 		89A2801D24EACF1200236A06 /* LunchPickingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2801C24EACF1200236A06 /* LunchPickingTests.swift */; };
 		89A2802824EACF1300236A06 /* LunchPickingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2802724EACF1300236A06 /* LunchPickingUITests.swift */; };
 		89A2803824EAD3D500236A06 /* VC_MainPageLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2803724EAD3D500236A06 /* VC_MainPageLogin.swift */; };
+		C898CA4BDAE468BAC9632C34 /* libPods-LunchPickingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0F61281F59BE53DDA8041F /* libPods-LunchPickingTests.a */; };
+		C9560458291E3855EE347479 /* libPods-LunchPicking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 797DD5023196EEC484806F85 /* libPods-LunchPicking.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B25D417BB3DE194B420F5E6 /* Pods-LunchPickingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchPickingTests.debug.xcconfig"; path = "Target Support Files/Pods-LunchPickingTests/Pods-LunchPickingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1B3A859224ECE41F00860A08 /* VC_CategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_CategoryScreen.swift; sourceTree = "<group>"; };
+		1B3A859424ECE4B700860A08 /* TC_CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TC_CategoryViewCell.swift; sourceTree = "<group>"; };
+		4D0F61281F59BE53DDA8041F /* libPods-LunchPickingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchPickingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7919BABD9778A664E6D2ED58 /* Pods-LunchPickingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchPickingTests.release.xcconfig"; path = "Target Support Files/Pods-LunchPickingTests/Pods-LunchPickingTests.release.xcconfig"; sourceTree = "<group>"; };
+		797DD5023196EEC484806F85 /* libPods-LunchPicking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchPicking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A27FFF24EACF0B00236A06 /* LunchPicking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchPicking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2800224EACF0B00236A06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A2800C24EACF0B00236A06 /* LunchPicking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LunchPicking.xcdatamodel; sourceTree = "<group>"; };
@@ -47,6 +58,11 @@
 		89A2802724EACF1300236A06 /* LunchPickingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchPickingUITests.swift; sourceTree = "<group>"; };
 		89A2802924EACF1300236A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A2803724EAD3D500236A06 /* VC_MainPageLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MainPageLogin.swift; sourceTree = "<group>"; };
+		9BFF64B4D2FD603A20DC6E79 /* Pods-LunchPicking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchPicking.debug.xcconfig"; path = "Target Support Files/Pods-LunchPicking/Pods-LunchPicking.debug.xcconfig"; sourceTree = "<group>"; };
+		A63EFD34AEFAEFCA4B307DA8 /* Pods-LunchPicking-LunchPickingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchPicking-LunchPickingUITests.release.xcconfig"; path = "Target Support Files/Pods-LunchPicking-LunchPickingUITests/Pods-LunchPicking-LunchPickingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B83CAD01BDDB194946C20554 /* Pods-LunchPicking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchPicking.release.xcconfig"; path = "Target Support Files/Pods-LunchPicking/Pods-LunchPicking.release.xcconfig"; sourceTree = "<group>"; };
+		E0260641F92657E5AEE81F89 /* libPods-LunchPicking-LunchPickingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchPicking-LunchPickingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E706E031E55593A9BF719496 /* Pods-LunchPicking-LunchPickingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchPicking-LunchPickingUITests.debug.xcconfig"; path = "Target Support Files/Pods-LunchPicking-LunchPickingUITests/Pods-LunchPicking-LunchPickingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9560458291E3855EE347479 /* libPods-LunchPicking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C898CA4BDAE468BAC9632C34 /* libPods-LunchPickingTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729133BFBF7857EF9F152F60 /* libPods-LunchPicking-LunchPickingUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09BC6A5FD24F2641A2657A3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BFF64B4D2FD603A20DC6E79 /* Pods-LunchPicking.debug.xcconfig */,
+				B83CAD01BDDB194946C20554 /* Pods-LunchPicking.release.xcconfig */,
+				E706E031E55593A9BF719496 /* Pods-LunchPicking-LunchPickingUITests.debug.xcconfig */,
+				A63EFD34AEFAEFCA4B307DA8 /* Pods-LunchPicking-LunchPickingUITests.release.xcconfig */,
+				1B25D417BB3DE194B420F5E6 /* Pods-LunchPickingTests.debug.xcconfig */,
+				7919BABD9778A664E6D2ED58 /* Pods-LunchPickingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		359EFDEA5D80B981F8DFED63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				797DD5023196EEC484806F85 /* libPods-LunchPicking.a */,
+				E0260641F92657E5AEE81F89 /* libPods-LunchPicking-LunchPickingUITests.a */,
+				4D0F61281F59BE53DDA8041F /* libPods-LunchPickingTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89A27FF624EACF0B00236A06 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +123,8 @@
 				89A2801B24EACF1200236A06 /* LunchPickingTests */,
 				89A2802624EACF1300236A06 /* LunchPickingUITests */,
 				89A2800024EACF0B00236A06 /* Products */,
+				09BC6A5FD24F2641A2657A3F /* Pods */,
+				359EFDEA5D80B981F8DFED63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				89A2803724EAD3D500236A06 /* VC_MainPageLogin.swift */,
+				1B3A859224ECE41F00860A08 /* VC_CategoryScreen.swift */,
+				1B3A859424ECE4B700860A08 /* TC_CategoryViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -148,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A2802C24EACF1300236A06 /* Build configuration list for PBXNativeTarget "LunchPicking" */;
 			buildPhases = (
+				629CE6CE0AA23AEB2CB268C2 /* [CP] Check Pods Manifest.lock */,
 				89A27FFB24EACF0B00236A06 /* Sources */,
 				89A27FFC24EACF0B00236A06 /* Frameworks */,
 				89A27FFD24EACF0B00236A06 /* Resources */,
@@ -165,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A2802F24EACF1300236A06 /* Build configuration list for PBXNativeTarget "LunchPickingTests" */;
 			buildPhases = (
+				683F0A44011880F43E9FAE9C /* [CP] Check Pods Manifest.lock */,
 				89A2801424EACF1200236A06 /* Sources */,
 				89A2801524EACF1200236A06 /* Frameworks */,
 				89A2801624EACF1200236A06 /* Resources */,
@@ -183,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A2803224EACF1300236A06 /* Build configuration list for PBXNativeTarget "LunchPickingUITests" */;
 			buildPhases = (
+				DCD237AB0C38EF382CFDA805 /* [CP] Check Pods Manifest.lock */,
 				89A2801F24EACF1200236A06 /* Sources */,
 				89A2802024EACF1200236A06 /* Frameworks */,
 				89A2802124EACF1200236A06 /* Resources */,
@@ -266,14 +315,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		629CE6CE0AA23AEB2CB268C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LunchPicking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		683F0A44011880F43E9FAE9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LunchPickingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCD237AB0C38EF382CFDA805 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LunchPicking-LunchPickingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		89A27FFB24EACF0B00236A06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B3A859324ECE41F00860A08 /* VC_CategoryScreen.swift in Sources */,
 				89A2800D24EACF0B00236A06 /* LunchPicking.xcdatamodeld in Sources */,
 				89A2800324EACF0B00236A06 /* AppDelegate.swift in Sources */,
 				89A2803824EAD3D500236A06 /* VC_MainPageLogin.swift in Sources */,
+				1B3A859524ECE4B700860A08 /* TC_CategoryViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +556,7 @@
 		};
 		89A2802D24EACF1300236A06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BFF64B4D2FD603A20DC6E79 /* Pods-LunchPicking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +575,7 @@
 		};
 		89A2802E24EACF1300236A06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B83CAD01BDDB194946C20554 /* Pods-LunchPicking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +594,7 @@
 		};
 		89A2803024EACF1300236A06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B25D417BB3DE194B420F5E6 /* Pods-LunchPickingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +617,7 @@
 		};
 		89A2803124EACF1300236A06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7919BABD9778A664E6D2ED58 /* Pods-LunchPickingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +640,7 @@
 		};
 		89A2803324EACF1300236A06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E706E031E55593A9BF719496 /* Pods-LunchPicking-LunchPickingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +661,7 @@
 		};
 		89A2803424EACF1300236A06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A63EFD34AEFAEFCA4B307DA8 /* Pods-LunchPicking-LunchPickingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
