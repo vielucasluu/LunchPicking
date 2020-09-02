@@ -29,7 +29,7 @@ class VC_MainPageLogin: UIViewController {
         
         self.view.addSubview(loginLabel)
         loginLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(91)
+            make.top.equalToSuperview().offset(80)
             make.leading.equalToSuperview().offset(14)
             
             make.height.equalTo(81)
@@ -114,7 +114,7 @@ class VC_MainPageLogin: UIViewController {
     //MARK:- UI Actions
     @objc func buttonAction(sender: UIButton!) {
         let CategoryScreen = VC_CategoryScreen()
-        self.navigationController?.pushViewController(CategoryScreen, animated: true)
+        self.navigationController?.setViewControllers([CategoryScreen], animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
