@@ -7,25 +7,22 @@
 //
 
 import UIKit
-
+import SnapKit
 class TC_CategoryViewCell: UITableViewCell {
-    
-    let productImage        = UIImageView()
+
+    let productImage    =       UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        productImage.backgroundColor = .blue
         self.addSubview(productImage)
         productImage.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().offset(30)
+            make.left.equalToSuperview().offset(10)
             make.height.equalToSuperview().offset(-40)
             make.height.equalTo(productImage.snp.width)
         }
-        
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

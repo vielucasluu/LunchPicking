@@ -9,23 +9,31 @@
 import UIKit
 import SnapKit
 
-class VC_CategoryScreen: UIViewController, UITableViewDataSource, UITableViewDelegate {
+enum TableViewType : Int {
+    case food = 0
+    case beverage = 1
+    case extra = 2
+}
+
+class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let titleLabel      =    UILabel()
-    let items           = ["Food","Beverage","Extra"]
+    let titleLabel          =       UILabel()
+    let tableView           =       UITableView()
     
-    let foodTableView   = UITableView()
-    let extraTableView  = UITableView()
+    let items               =       ["Food","Beverage","Extra"]
+    let images              =       ["chicken", "coffee", "yogurt"]
+    var tableType           : TableViewType = .food
     
     lazy var segmentedControl: UISegmentedControl =  {
         let control = UISegmentedControl(items: self.items)
         control.selectedSegmentIndex = 0
         control.layer.cornerRadius = 9
+        control.addTarget(self, action: #selector(segmentDidChangeValue), for: .valueChanged)
         return control
     }()
     
+
     //MARK:- Life Circle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -51,31 +59,22 @@ class VC_CategoryScreen: UIViewController, UITableViewDataSource, UITableViewDel
             make.leading.equalToSuperview().offset(14)
         }
         
+        ///MARK: UISegmentedControl
         segmentedControl.addTarget(self, action: #selector(segmentDidChangeValue), for: .valueChanged)
         view.addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-250)
+            make.top.equalTo(titleLabel.snp.bottom).offset(30)
             make.height.equalTo(32)
             make.width.equalTo(343)
         }
-                
-        foodTableView.dataSource = self
-        foodTableView.delegate = self
-        foodTableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIndentifier")
-        foodTableView.backgroundColor = .red
-        self.view.addSubview(foodTableView)
-        foodTableView.snp.makeConstraints { (make) in
-            make.top.equalTo(segmentedControl.snp.bottom).offset(30)
-            make.left.right.bottom.equalToSuperview()
-        }
         
-        extraTableView.dataSource = self
-        extraTableView.delegate = self
-        extraTableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIndentifier")
-        extraTableView.backgroundColor = .yellow
-        self.view.addSubview(extraTableView)
-        extraTableView.snp.makeConstraints { (make) in
+        ///MARK:- FoodTableView
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        self.view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
             make.left.right.bottom.equalToSuperview()
         }
@@ -91,15 +90,10 @@ class VC_CategoryScreen: UIViewController, UITableViewDataSource, UITableViewDel
         let details = VC_MainPagePickDetails()
         self.navigationController?.pushViewController(details, animated: true)
     }
-    
-    @objc func segmentDidChangeValue() {
-        if self.segmentedControl.selectedSegmentIndex == 0 {
-            foodTableView.isHidden = false
-            extraTableView.isHidden = true
-        } else if self.segmentedControl.selectedSegmentIndex == 2 {
-            foodTableView.isHidden = true
-            extraTableView.isHidden = false
-        }
+
+    @objc func segmentDidChangeValue(){
+        tableType = TableViewType.init(rawValue: segmentedControl.selectedSegmentIndex) ?? .food
+        tableView.reloadData()
     }
     
     //MARK:- UITableViewDataSource
@@ -107,18 +101,30 @@ class VC_CategoryScreen: UIViewController, UITableViewDataSource, UITableViewDel
         1
     }
     
+
+    //MARK:- TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIndentifier", for: indexPath) as! TC_CategoryViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! TC_CategoryViewCell
+        
+        switch self.tableType {
+        case .food:
+            cell.imageView?.image = UIImage.init(named: "chicken")
+            break
+        case .beverage:
+            cell.imageView?.image = UIImage.init(named: "coffee")
+            break
+        default:
+            cell.imageView?.image = UIImage.init(named: "yogurt")
+        }
         
         return cell
     }
-
 }

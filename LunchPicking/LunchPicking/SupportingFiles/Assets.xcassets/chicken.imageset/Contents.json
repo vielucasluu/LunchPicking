@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "scale" : "1x",
+      "idiom" : "universal",
+      "filename" : "canhGaChienNuocMam600X400.png"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "canhGaChienNuocMam600X400@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "canhGaChienNuocMam600X400@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
