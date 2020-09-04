@@ -8,10 +8,14 @@
 
 import UIKit
 import SnapKit
-class VC_CategoryScreen: UIViewController {
+
+class VC_CategoryScreen: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let titleLabel  =    UILabel()
-    let items = ["Food","Beverage","Extra"]
+    let titleLabel      =    UILabel()
+    let items           = ["Food","Beverage","Extra"]
+    
+    let foodTableView   = UITableView()
+    let extraTableView  = UITableView()
     
     lazy var segmentedControl: UISegmentedControl =  {
         let control = UISegmentedControl(items: self.items)
@@ -21,20 +25,20 @@ class VC_CategoryScreen: UIViewController {
     }()
     
     //MARK:- Life Circle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let backButtonItem = UIBarButtonItem(image: UIImage(named: "back_icon"),
-                                             style: .plain, target: self,
-                                             action: #selector(backButtonTapped))
-        backButtonItem.tintColor = .black
-        navigationItem.leftBarButtonItem = backButtonItem
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(named: "2c767e") ?? UIColor.black, NSAttributedString.Key.font: UIFont.init(name: "AvenirNext-DemiBold", size: 17.0) ?? UIFont.systemFontSize]
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        //MARK:- Title screen
+        
+//        let pickButton = UIBarButtonItem.init(title: "PickTest",
+//                                              style: .done,
+//                                              target: self,
+//                                              action: #selector(pickButtonTapped))
+//        navigationItem.rightBarButtonItem = pickButton
+        
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(named: "2c767e") ?? UIColor.black, NSAttributedString.Key.font: UIFont.init(name: "AvenirNext-DemiBold", size: 17.0) ?? UIFont.systemFontSize]
+        
         titleLabel.text = "What’s pick?"
         titleLabel.textColor = .black
         titleLabel.font = UIFont.boldSystemFont(ofSize: 34.0)
@@ -47,6 +51,7 @@ class VC_CategoryScreen: UIViewController {
             make.leading.equalToSuperview().offset(14)
         }
         
+        segmentedControl.addTarget(self, action: #selector(segmentDidChangeValue), for: .valueChanged)
         view.addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -54,20 +59,66 @@ class VC_CategoryScreen: UIViewController {
             make.height.equalTo(32)
             make.width.equalTo(343)
         }
+                
+        foodTableView.dataSource = self
+        foodTableView.delegate = self
+        foodTableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIndentifier")
+        foodTableView.backgroundColor = .red
+        self.view.addSubview(foodTableView)
+        foodTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(segmentedControl.snp.bottom).offset(30)
+            make.left.right.bottom.equalToSuperview()
+        }
+        
+        extraTableView.dataSource = self
+        extraTableView.delegate = self
+        extraTableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIndentifier")
+        extraTableView.backgroundColor = .yellow
+        self.view.addSubview(extraTableView)
+        extraTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(segmentedControl.snp.bottom).offset(30)
+            make.left.right.bottom.equalToSuperview()
+        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+        
     //MARK:- UI Actions
-    @objc func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
+    @objc func pickButtonTapped() {
+        let details = VC_MainPagePickDetails()
+        self.navigationController?.pushViewController(details, animated: true)
     }
     
+    @objc func segmentDidChangeValue() {
+        if self.segmentedControl.selectedSegmentIndex == 0 {
+            foodTableView.isHidden = false
+            extraTableView.isHidden = true
+        } else if self.segmentedControl.selectedSegmentIndex == 2 {
+            foodTableView.isHidden = true
+            extraTableView.isHidden = false
+        }
+    }
     
-    //MARK:- TableView methods
+    //MARK:- UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIndentifier", for: indexPath) as! TC_CategoryViewCell
+        
+        return cell
     }
 
 }
