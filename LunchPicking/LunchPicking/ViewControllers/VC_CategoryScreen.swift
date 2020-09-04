@@ -9,14 +9,14 @@
 import UIKit
 import SnapKit
 class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     let titleLabel          =       UILabel()
     let items               =       ["Food","Beverage","Extra"]
     
-    let FoodTableView       =       UITableView()
-    let BeverageTableView   =       UITableView()
-    let ExtraTableView      =       UITableView()
+    let tableView           =       UITableView()
+    let images              =       ["chicken","coffee","yogurt"]
     
+    var index               =       0
     
     lazy var segmentedControl: UISegmentedControl =  {
         let control = UISegmentedControl(items: self.items)
@@ -52,54 +52,19 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
         ///MARK:- FoodTableView
-        FoodTableView.dataSource = self
-        FoodTableView.delegate = self
-        FoodTableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIndentifier")
-        FoodTableView.largeContentImage = UIImage(contentsOfFile: "chicken")
-        self.view.addSubview(FoodTableView)
-        FoodTableView.snp.makeConstraints { (make) in
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        self.view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
             make.left.right.bottom.equalToSuperview()
         }
-        
-        ///MARK:- BerverageTableView
-        BeverageTableView.dataSource = self
-        BeverageTableView.delegate = self
-        BeverageTableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIndentifier")
-        BeverageTableView.largeContentImage = UIImage(contentsOfFile: "coffee")
-        self.view.addSubview(BeverageTableView)
-        BeverageTableView.snp.makeConstraints { (make) in
-            make.top.equalTo(segmentedControl.snp.bottom).offset(30)
-            make.left.right.bottom.equalToSuperview()
-        }
-        ///MARK:- ExtraTableView
-        ExtraTableView.dataSource = self
-        ExtraTableView.delegate = self
-        ExtraTableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIndentifier")
-        
-        ExtraTableView.largeContentImage = UIImage(contentsOfFile: "yogurt")
-        self.view.addSubview(ExtraTableView)
-        ExtraTableView.snp.makeConstraints { (make) in
-            make.top.equalTo(segmentedControl.snp.bottom).offset(30)
-            make.left.right.bottom.equalToSuperview()
-        }
-        
-        
-        
     }
     
-   @objc func segmentDidChangeValue(){
-        switch segmentedControl.selectedSegmentIndex {
-        case 1:
-            FoodTableView.isHidden = true
-            ExtraTableView.isHidden = true
-        case 2:
-            FoodTableView.isHidden = true
-            BeverageTableView.isHidden = true
-        default:
-            BeverageTableView.isHidden = true
-            ExtraTableView.isHidden = true
-        }
+    @objc func segmentDidChangeValue(){
+        index = segmentedControl.selectedSegmentIndex
+        tableView.reloadData()
     }
     
     
@@ -109,14 +74,16 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return 100
-       }
+        return 100
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIndentifier", for: indexPath) as! TC_CategoryViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! TC_CategoryViewCell
+        cell.imageView?.image = UIImage(named: images[index])
         return cell
     }
-
+    
+    
     
     
     

@@ -13,7 +13,6 @@ class TC_CategoryViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        productImage.backgroundColor = .blue
         self.addSubview(productImage)
         productImage.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
