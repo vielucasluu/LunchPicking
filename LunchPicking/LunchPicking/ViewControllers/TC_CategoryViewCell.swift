@@ -11,7 +11,6 @@ import SnapKit
 class TC_CategoryViewCell: UITableViewCell {
 
     let productImage    =       UIImageView()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(productImage)
@@ -25,6 +24,11 @@ class TC_CategoryViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
     }
     
 }

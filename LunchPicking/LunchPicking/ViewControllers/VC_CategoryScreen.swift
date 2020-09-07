@@ -36,7 +36,7 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
     //MARK:- Life Circle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(displayP3Red: 249, green: 249, blue: 249, alpha: 0.94)
         
 //        let pickButton = UIBarButtonItem.init(title: "PickTest",
 //                                              style: .done,
@@ -74,6 +74,7 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.delegate = self
         tableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         self.view.addSubview(tableView)
+        tableView.backgroundColor = UIColor(displayP3Red: 249, green: 249, blue: 249, alpha: 0.94)
         tableView.snp.makeConstraints { (make) in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
             make.left.right.bottom.equalToSuperview()
@@ -124,7 +125,7 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
         default:
             cell.imageView?.image = UIImage.init(named: "yogurt")
         }
-        
+        cell.editingAccessoryType = .detailButton
         return cell
     }
 }
