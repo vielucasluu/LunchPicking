@@ -11,6 +11,7 @@
 		1B3A859524ECE4B700860A08 /* TC_CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A859424ECE4B700860A08 /* TC_CategoryViewCell.swift */; };
 		729133BFBF7857EF9F152F60 /* libPods-LunchPicking-LunchPickingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0260641F92657E5AEE81F89 /* libPods-LunchPicking-LunchPickingUITests.a */; };
 		8927B12424F2CB1400BB0277 /* VC_MainPagePickDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8927B12324F2CB1400BB0277 /* VC_MainPagePickDetails.swift */; };
+		894DC1F625067B2D008AAE6C /* UIColor_EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DC1F525067B2C008AAE6C /* UIColor_EXT.swift */; };
 		89A2800324EACF0B00236A06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2800224EACF0B00236A06 /* AppDelegate.swift */; };
 		89A2800D24EACF0B00236A06 /* LunchPicking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A2800B24EACF0B00236A06 /* LunchPicking.xcdatamodeld */; };
 		89A2800F24EACF1200236A06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A2800E24EACF1200236A06 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		7919BABD9778A664E6D2ED58 /* Pods-LunchPickingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchPickingTests.release.xcconfig"; path = "Target Support Files/Pods-LunchPickingTests/Pods-LunchPickingTests.release.xcconfig"; sourceTree = "<group>"; };
 		797DD5023196EEC484806F85 /* libPods-LunchPicking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchPicking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8927B12324F2CB1400BB0277 /* VC_MainPagePickDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_MainPagePickDetails.swift; sourceTree = "<group>"; };
+		894DC1F525067B2C008AAE6C /* UIColor_EXT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_EXT.swift; sourceTree = "<group>"; };
 		89A27FFF24EACF0B00236A06 /* LunchPicking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchPicking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2800224EACF0B00236A06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A2800C24EACF0B00236A06 /* LunchPicking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LunchPicking.xcdatamodel; sourceTree = "<group>"; };
@@ -126,6 +128,39 @@
 			path = VC_MainPagePickDetails;
 			sourceTree = "<group>";
 		};
+		894DC1F125067958008AAE6C /* VC_MainPageLogin */ = {
+			isa = PBXGroup;
+			children = (
+				89A2803724EAD3D500236A06 /* VC_MainPageLogin.swift */,
+			);
+			path = VC_MainPageLogin;
+			sourceTree = "<group>";
+		};
+		894DC1F22506796D008AAE6C /* VC_MainPageCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1B3A859224ECE41F00860A08 /* VC_CategoryScreen.swift */,
+				1B3A859424ECE4B700860A08 /* TC_CategoryViewCell.swift */,
+			);
+			path = VC_MainPageCategory;
+			sourceTree = "<group>";
+		};
+		894DC1F325067984008AAE6C /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				89A2800224EACF0B00236A06 /* AppDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		894DC1F425067AE9008AAE6C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				894DC1F525067B2C008AAE6C /* UIColor_EXT.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		89A27FF624EACF0B00236A06 = {
 			isa = PBXGroup;
 			children = (
@@ -151,8 +186,9 @@
 		89A2800124EACF0B00236A06 /* LunchPicking */ = {
 			isa = PBXGroup;
 			children = (
+				894DC1F425067AE9008AAE6C /* Extensions */,
 				89A2803624EAD3B700236A06 /* ViewControllers */,
-				89A2800224EACF0B00236A06 /* AppDelegate.swift */,
+				894DC1F325067984008AAE6C /* Applications */,
 				89A2803524EACF8F00236A06 /* SupportingFiles */,
 			);
 			path = LunchPicking;
@@ -190,10 +226,9 @@
 		89A2803624EAD3B700236A06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				894DC1F22506796D008AAE6C /* VC_MainPageCategory */,
+				894DC1F125067958008AAE6C /* VC_MainPageLogin */,
 				8927B12224F2CAF500BB0277 /* VC_MainPagePickDetails */,
-				89A2803724EAD3D500236A06 /* VC_MainPageLogin.swift */,
-				1B3A859224ECE41F00860A08 /* VC_CategoryScreen.swift */,
-				1B3A859424ECE4B700860A08 /* TC_CategoryViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -406,6 +441,7 @@
 				89A2800324EACF0B00236A06 /* AppDelegate.swift in Sources */,
 				89A2803824EAD3D500236A06 /* VC_MainPageLogin.swift in Sources */,
 				1B3A859524ECE4B700860A08 /* TC_CategoryViewCell.swift in Sources */,
+				894DC1F625067B2D008AAE6C /* UIColor_EXT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

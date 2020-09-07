@@ -36,7 +36,7 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
     //MARK:- Life Circle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(displayP3Red: 249, green: 249, blue: 249, alpha: 0.94)
+        view.backgroundColor = .white//UIColor(displayP3Red: 249, green: 249, blue: 249, alpha: 0.94)
         
 //        let pickButton = UIBarButtonItem.init(title: "PickTest",
 //                                              style: .done,
@@ -60,21 +60,32 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
         ///MARK: UISegmentedControl
-        segmentedControl.addTarget(self, action: #selector(segmentDidChangeValue), for: .valueChanged)
-        view.addSubview(segmentedControl)
-        segmentedControl.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
+        
+        let segmentView = UIView()
+        segmentView.backgroundColor = .white
+        self.view.addSubview(segmentView)
+        segmentView.snp.makeConstraints { (make) in
+            make.centerX.width.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
-            make.height.equalTo(32)
-            make.width.equalTo(343)
+            make.height.equalTo(44)
+        }
+        
+        segmentedControl.addTarget(self, action: #selector(segmentDidChangeValue), for: .valueChanged)
+        segmentedControl.backgroundColor = UIColor.white
+        segmentView.addSubview(segmentedControl)
+        segmentedControl.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().offset(-32)
+            make.height.equalToSuperview().offset(-12)
+            make.center.equalToSuperview()
         }
         
         ///MARK:- FoodTableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TC_CategoryViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.separatorStyle = .none
         self.view.addSubview(tableView)
-        tableView.backgroundColor = UIColor(displayP3Red: 249, green: 249, blue: 249, alpha: 0.94)
+        tableView.backgroundColor = UIColor.init(hexString: "f0f9f9f9")
         tableView.snp.makeConstraints { (make) in
             make.top.equalTo(segmentedControl.snp.bottom).offset(30)
             make.left.right.bottom.equalToSuperview()
@@ -83,7 +94,7 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
         
     //MARK:- UI Actions
@@ -109,23 +120,41 @@ class VC_CategoryScreen: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 123
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        print("")
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .insert
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! TC_CategoryViewCell
+        cell.accessoryType = .detailButton
+        cell.editingAccessoryType = .checkmark
         
         switch self.tableType {
         case .food:
-            cell.imageView?.image = UIImage.init(named: "chicken")
+            cell.productImage.image = UIImage.init(named: "chicken")
             break
         case .beverage:
-            cell.imageView?.image = UIImage.init(named: "coffee")
+            cell.productImage.image = UIImage.init(named: "coffee")
             break
         default:
-            cell.imageView?.image = UIImage.init(named: "yogurt")
+            cell.productImage.image = UIImage.init(named: "yogurt")
         }
-        cell.editingAccessoryType = .detailButton
         return cell
+    }
+    
+    //MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
